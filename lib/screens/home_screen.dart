@@ -28,26 +28,24 @@ class HomeScreen extends StatelessWidget {
       body: ListView.builder(
         itemCount: ids.length,
         itemBuilder: (context, index) {
-          return Card(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                YoutubePlayer(
-                  controller: YoutubePlayerController(
-                    flags: YoutubePlayerFlags(autoPlay: false, mute: false),
-                    initialVideoId: ids[index]['id'],
-                  ),
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              YoutubePlayer(
+                controller: YoutubePlayerController(
+                  flags: YoutubePlayerFlags(autoPlay: false, mute: false),
+                  initialVideoId: ids[index]['id'],
                 ),
-                Text(
-                  ids[index]['title'],
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                  ),
+              ),
+              Text(
+                ids[index]['title'],
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
                 ),
-              ],
-            ),
+              ),
+            ],
           );
         },
       ),
