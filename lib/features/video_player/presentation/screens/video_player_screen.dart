@@ -51,41 +51,36 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen>
     super.build(context);
 
     return YoutubePlayerBuilder(
-        player: YoutubePlayer(
-          controller: _controller,
-          showVideoProgressIndicator: true,
-          progressIndicatorColor: AppColors.primaryGreen,
-        ),
-        builder: (context, player) {
-          return Scaffold(
-            backgroundColor: AppColors.scaffoldBackground,
-            appBar: AppBar(
-              backgroundColor: AppColors.primaryGreen,
-              centerTitle: true,
-              title: Text(
-                AppStrings.appTitle,
-                style: AppStyle.bold18,
-              ),
-              iconTheme: const IconThemeData(
-                color: AppColors.textWhite,
-              ),
-            ),
-            body: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                player,
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Text(
-                    widget.title,
-                    textAlign: TextAlign.right,
-                    style: AppStyle.bold20,
-                  ),
+      player: YoutubePlayer(
+        controller: _controller,
+        showVideoProgressIndicator: true,
+        progressIndicatorColor: AppColors.primaryGreen,
+      ),
+      builder: (context, player) {
+        return Scaffold(
+          backgroundColor: AppColors.scaffoldBackground,
+          appBar: AppBar(
+            backgroundColor: AppColors.primaryGreen,
+            centerTitle: true,
+            title: Text(widget.title, style: AppStyle.bold18),
+            iconTheme: const IconThemeData(color: AppColors.textWhite),
+          ),
+          body: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              player,
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Text(
+                  widget.title,
+                  textAlign: TextAlign.left,
+                  style: AppStyle.bold20,
                 ),
-              ],
-            ),
-          );
-        },
-      );
+              ),
+            ],
+          ),
+        );
+      },
+    );
   }
 }

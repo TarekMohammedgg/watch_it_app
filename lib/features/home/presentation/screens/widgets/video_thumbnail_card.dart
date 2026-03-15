@@ -63,7 +63,7 @@ class VideoThumbnailCard extends StatelessWidget {
               padding: const EdgeInsets.all(12),
               child: Text(
                 title,
-                textAlign: TextAlign.right,
+                textAlign: TextAlign.left,
                 style: AppStyle.semiBold16,
               ),
             ),

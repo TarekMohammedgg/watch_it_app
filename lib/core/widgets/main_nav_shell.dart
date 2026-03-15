@@ -16,7 +16,7 @@ class _MainNavShellState extends State<MainNavShell> {
 
   final List<Widget> _screens = const [
     HomeScreen(),
-    SettingsScreen(),
+    Directionality(textDirection: TextDirection.rtl, child: SettingsScreen()),
   ];
 
   @override
